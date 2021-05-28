@@ -19,6 +19,9 @@ const items = [
 
 export default () => {
     return (
+        <div>
+        <br/>
         <Accordian items={items}/>
+        </div>
     )
 }
