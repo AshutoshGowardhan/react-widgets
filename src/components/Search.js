@@ -23,17 +23,17 @@ const Search = () => {
 
         if (term && !results.length) {
             search();
-          } else {
+        } else {
             const timeoutId = setTimeout(() => {
-              if (term) {
-                search();
-              }
+                if (term) {
+                    search();
+                }
             }, 1000);
-      
+
             return () => {
-              clearTimeout(timeoutId);
+                clearTimeout(timeoutId);
             };
-          }
+        }
 
     }, [term])
     const renderedResult = results.map((result) => {
