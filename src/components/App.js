@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Accordian from './Accordian';
 import Search from './Search';
 import Dropdown from './Dropdown';
@@ -32,15 +32,19 @@ const options = [
         label: 'The Color Blue',
         value: 'blue',
     },
-]
+];
 
 export default () => {
+    const [selected,setSelected] = useState(options[0]);
     return (
         <div>
         <br/>
         {/* <Accordian items={items}/> */}
         {/* <Search /> */}
-        <Dropdown options={options}/>
+        <Dropdown
+        selected={selected}
+        onSelectedChange={setSelected} 
+        options={options}/>
         </div>
     )
 }
