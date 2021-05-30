@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Accordian from './Accordian';
 import Search from './Search';
 import Dropdown from './Dropdown';
+import Translate from './Translate';
 
 
 const items = [
@@ -42,13 +43,15 @@ export default () => {
         <br/>
         {/* <Accordian items={items}/> */}
         {/* <Search /> */}
-        <button onClick={()=> setShowDropdown(!showDropdown)}>Toggel Downdown</button>
+        {/* <button onClick={()=> setShowDropdown(!showDropdown)}>Toggel Downdown</button>
         {showDropdown ? 
         <Dropdown
         selected={selected}
         onSelectedChange={setSelected} 
         options={options}/>
-         : null }
+         : null } */}
+
+         <Translate />
         </div>
     )
 }
