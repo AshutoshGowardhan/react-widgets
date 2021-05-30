@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Accordian from './Accordian';
 import Search from './Search';
 import Dropdown from './Dropdown';
 import Translate from './Translate';
-
-
+import Route from './Route';
 
 const items = [
     {
@@ -36,23 +35,29 @@ const options = [
     },
 ];
 
-export default () => {
-    const [selected,setSelected] = useState(options[0]);
-    const [showDropdown, setShowDropdown] = useState(true);
+const App = () => {
+    const [selected, setSelected] = useState(options[0]);
     return (
         <div>
-        <br/>
-        {/* <Accordian items={items}/> */}
-        {/* <Search /> */}
-        {/* <button onClick={()=> setShowDropdown(!showDropdown)}>Toggel Downdown</button>
-        {showDropdown ? 
-        <Dropdown
-        selected={selected}
-        onSelectedChange={setSelected} 
-        options={options}/>
-         : null } */}
-
-         <Translate />
+            <Route path='/'>
+                <Accordian items={items} />
+            </Route>
+            <Route path='/list'>
+                <Search />
+            </Route>
+            <Route path='/dropdown'>
+                <Dropdown
+                    label="Select a color"
+                    selected={selected}
+                    onSelectedChange={setSelected}
+                    options={options} 
+                    />
+            </Route>
+            <Route path='/translate'>
+                <Translate />
+            </Route>
         </div>
-    )
-}
+    );
+};
+
+export default App;
