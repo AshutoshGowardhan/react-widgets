@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Accordian from './Accordian';
-import Search from './Search';
-import Dropdown from './Dropdown';
-import Translate from './Translate';
-import Route from './Route';
-import Header from './Header';
+import Accordian from './components/Accordian';
+import Search from './components/Search';
+import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
+import Route from './components/Route';
+import Header from './components/Header';
 
 const items = [
     {
